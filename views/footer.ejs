@@ -1,0 +1,140 @@
+<!--================ start footer Area  =================-->
+<footer class="footer-area mt-4">
+
+	<div class="container">
+		<div class="row justify-content-start d-flex align-items-center pt-2 pb-2">
+			<div class="col-lg-2  p-0 justify-content-center d-flex align-items-center">
+				<img src="/img/logo-2.png" width="100" />
+			</div>
+			<div class="col-lg-2 justify-content-center d-flex align-items-center">
+				<p>contato</p>
+			</div>
+
+		</div>
+
+		<div class="row footer-bottom d-flex justify-content-around align-items-center">
+			<p class="col-lg-6 col-md-8 footer-text text-white">
+				<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+
+				<small>2025 &copy; Todos os direitos reservados lsstecnologias </small>
+				<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+			</p>
+			<div class="col-lg-6 col-md-4 footer-social">
+				
+				<!--<a href="#">
+					<i class="fa fa-facebook"></i>
+				</a>
+				<a href="#">
+					<i class="fa fa-twitter"></i>
+				</a>
+				<a href="#">
+					<i class="fa fa-dribbble"></i>
+				</a>
+				<a href="#">
+					<i class="fa fa-behance"></i>
+				</a>-->
+			</div>
+		</div>
+	</div>
+</footer>
+<!--================ End footer Area  =================-->
+
+
+
+<script src="./js/jquery-3.2.1.min.js"></script>
+<script src="./js/jquery.mask.min.js"></script>
+<script src="./js/popper.js"></script>
+<script src="./js/bootstrap.min.js"></script>
+<script src="./js/stellar.js"></script>
+<script src="./js/jquery.lightbox.js"></script>
+<script src="./vendors/nice-select/js/jquery.nice-select.min.js"></script>
+<script src="./vendors/isotope/imagesloaded.pkgd.min.js"></script>
+<script src="./vendors/isotope/isotope-min.js"></script>
+<script src="./vendors/owl-carousel/owl.carousel.min.js"></script>
+<script src="./js/jquery.ajaxchimp.min.js"></script>
+<script src="./vendors/counter-up/jquery.waypoints.min.js"></script>
+<script src="./vendors/counter-up/jquery.counterup.js"></script>
+<script src="./js/mail-script.js"></script>
+<script src="./vendors/popup/jquery.magnific-popup.min.js"></script>
+<script src="./vendors/swiper/js/swiper.min.js"></script>
+<script src="./vendors/scroll/jquery.mCustomScrollbar.js"></script>
+<script src="./js/theme.js"></script>
+<script src="./js/geolocation.js"></script>
+
+<script>
+
+	$('.cel_n').mask('(00) 00000-0000');
+	const btnTop = $("#btn-top");
+	btnTop.css("display", "none");
+	window.onscroll = () => { scrollFunction() }
+
+	function scrollFunction() {
+		if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+			btnTop.css("display", "block");
+
+		} else {
+			btnTop.css("display", "none");
+
+		}
+	}
+	var topFunction = () => {
+		$("html, body").animate({ scrollTop: "0" }, 500);
+	}
+
+	//TERMOS 
+	const termos_value = sessionStorage.getItem('termos');
+	if (termos_value) {
+		$('#termos').css("display", "none");
+	}
+
+	function aceptTermos() {
+		$('#termos').css("display", "none");
+		sessionStorage.setItem('termos', true);
+		
+	}
+
+
+	let preloader = document.getElementById('preloader');
+	if (preloader) {
+		window.addEventListener('load', () => {
+			preloader.remove();
+		})
+	}
+
+
+	$(function () {
+
+		$('.popup-modal').magnificPopup({
+			type: 'inline',
+			preloader: false,
+			focus: '#username',
+			modal: true,
+			midClick: true,
+		});
+		$(document).on('click', '.popup-modal-dismiss', function (e) {
+			e.preventDefault();
+			$.magnificPopup.close();
+		});
+
+		// Example 1: From an element in DOM
+		/*$('.open-popup-link').magnificPopup({
+			type: 'inline',
+			midClick: true // allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source.
+		});
+
+		// Example: 2 Dynamically created
+		$('button').magnificPopup({
+			items: {
+				src: '<div class="white-popup">Dynamically created popup</div>',
+				type: 'inline'
+			},
+			closeBtnInside: true
+		});
+		*/
+	});
+
+</script>
+
+</body>
+
+</html>

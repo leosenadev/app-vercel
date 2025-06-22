@@ -1,16 +1,24 @@
 {
-  "name": "app-vercel",
+  "name": "encarte",
   "version": "1.0.0",
+  "description": "encarte modelo dois",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "leosenadev",
   "license": "ISC",
-  "description": "",
   "dependencies": {
+    "body-parser": "^2.2.0",
+    "bootstrap-icons": "^1.13.1",
+    "cors": "^2.8.5",
+    "ejs": "^3.1.10",
     "express": "^5.1.0",
-    "nodemon": "^3.1.10",
-    "serverless-http": "^3.2.0"
+    "fs": "^0.0.1-security",
+    "geolocation": "^0.2.0",
+    "morgan": "^1.10.0",
+    "node-navigator": "^1.0.1",
+    "socket.io": "^4.8.1",
+    "uuid": "^11.1.0"
   }
 }

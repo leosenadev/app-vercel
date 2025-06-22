@@ -1,0 +1,273 @@
+<%- include('header'); %>
+	<%- include('main'); %>
+
+
+
+		<!--================ Banner Area =================-->
+		<section class="banner_area">
+			<div class="banner_inner d-flex align-items-center">
+				<div class="container-fluid background_content">
+					<div class="container-fluid banner_content text-center">
+						<h1 class="txt-titulo">Menu</h1>
+
+					</div>
+				</div>
+
+			</div>
+		</section>
+		<!--================End Banner Area =================-->
+
+
+		<!--================ Menu Area =================-->
+
+		<section class="menu_area white">
+			<div class="container">
+				<a class="nav-link popup-modal" href="#cadastro-modal">Cadastro</a>
+
+				<div id="cadastro-modal" class="container p-3 bg-light contain white-popup-block mfp-hide">
+					<div class="row">
+
+						<div class=" col-sm-12 d-flex align-items-center justify-content-end">
+
+							<button class="btn btn-outline-primary popup-modal-dismiss btn-sm " href="#"><i
+									class="bi bi-x-lg"></i></button>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-12 d-flex justify-content-center align-items-center ">
+							<img src="/img/logo.png" class="img-fluid p-3">
+						</div>
+						<div class="col-lg-12 text-center ">
+							<h2>Seja bem-vindo!</h2>
+						</div>
+					</div>
+					<form class="mt-2">
+
+
+						<div class="d-grid gap-2">
+							<label for="nome" class="form-label">Nome completo:</label>
+							<input type="text" id="nome" class="form-control" aria-describedby="validNome" autocomplete="off">
+							<div id="validNome" class="form-text">
+
+							</div>
+							<label for="cel" class="form-label">Celular: </label>
+							<input type="text" id="celular" class="form-control cel_n" aria-describedby="validCel" autocomplete="off">
+							<div id="validCel" class="form-text">
+
+							</div>
+							<button class="btn btn-primary btn-block mt-2" onclick="" type="button">Entrar</button>
+
+						</div>
+					</form>
+
+
+
+
+				</div>
+				<div id="localizacao-modal" class="container p-3 bg-light contain white-popup-block mfp-hide">
+
+
+
+					<h4 class="lh-1"><i class="bi bi-geo-alt-fill"></i> Minha Região</h4>
+					<div id="content-map"></div>
+
+					<a id="txt_mylocal" target="_blank"> </a>
+					</br>
+					<button class="btn btn-primary btn-sm" onclick="getMap()">Exibir local</button>
+					<button class="btn btn-primary popup-modal-dismiss btn-sm" href="#">X</button>
+
+				</div>
+				<div id="modal-termos" class="container p-3 bg-light contain white-popup-block mfp-hide">
+					<h4 class="lh-1"><i class="bi bi-geo-alt-fill"></i> Termos de Uso e Serviço da Lss Tecnologias</h4>
+					<button class="btn btn-primary popup-modal-dismiss btn-sm" href="#">X</button>
+
+				</div>
+
+				<h1 class="pt-2 pb-4 " id="bebidas">Bebidas </h1>
+				<div class="row menu_inner">
+					<div class="col-md-12 col-lg-10 col-xl-6">
+						<div class="menu_list">
+							<ul class="list">
+								<li>
+									<h4>Wonton with french fries
+										<span>$5.00</span>
+									</h4>
+									<p>Wonthon/Potato/Fries/Sauce</p>
+								</li>
+								<li>
+									<h4>Roasted Red Potatoes with Rosemary
+										<span>$5.00</span>
+									</h4>
+									<p>Wonthon/Potato/Fries/Sauce</p>
+								</li>
+								<li>
+									<h4>Bacon-Wrapped Shrimp with Garlic
+										<span>$5.00</span>
+									</h4>
+									<p>Wonthon/Potato/Fries/Sauce</p>
+								</li>
+								<li>
+									<h4>Apple Smoked Chicken with White Sauce
+										<span>$5.00</span>
+									</h4>
+									<p>Wonthon/Potato/Fries/Sauce</p>
+								</li>
+								<li>
+									<h4>Imported Oysters Grill (5 Pieces)
+										<span>$5.00</span>
+									</h4>
+									<p>Wonthon/Potato/Fries/Sauce</p>
+								</li>
+								<li>
+									<h4>Apple Smoked Chicken with White Sauce
+										<span>$5.00</span>
+									</h4>
+									<p>Wonthon/Potato/Fries/Sauce</p>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-md-12 col-lg-10 col-xl-6">
+						<div class="menu_list pr-0">
+
+							<ul class="list">
+								<li>
+									<h4>Wonton with french fries
+										<span>$5.00</span>
+									</h4>
+									<p>Wonthon/Potato/Fries/Sauce</p>
+								</li>
+								<li>
+									<h4>Roasted Red Potatoes with Rosemary
+										<span>$5.00</span>
+									</h4>
+									<p>Wonthon/Potato/Fries/Sauce</p>
+								</li>
+								<li>
+									<h4>Bacon-Wrapped Shrimp with Garlic
+										<span>$5.00</span>
+									</h4>
+									<p>Wonthon/Potato/Fries/Sauce</p>
+								</li>
+								<li>
+									<h4>Apple Smoked Chicken with White Sauce
+										<span>$5.00</span>
+									</h4>
+									<p>Wonthon/Potato/Fries/Sauce</p>
+								</li>
+								<li>
+									<h4>Imported Oysters Grill (5 Pieces)
+										<span>$5.00</span>
+									</h4>
+									<p>Wonthon/Potato/Fries/Sauce</p>
+								</li>
+								<li>
+									<h4>Apple Smoked Chicken with White Sauce
+										<span>$5.00</span>
+									</h4>
+									<p>Wonthon/Potato/Fries/Sauce</p>
+								</li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="col-md-12 col-lg-10 col-xl-6 mt-4" id="petiscos">
+						<h1 class="pb-4">Petiscos</h1>
+						<div class="menu_list pr-0">
+							<ul class="list">
+								<li>
+									<h4>Wonton with french fries
+										<span>$5.00</span>
+									</h4>
+									<p>Wonthon/Potato/Fries/Sauce</p>
+								</li>
+								<li>
+									<h4>Roasted Red Potatoes with Rosemary
+										<span>$5.00</span>
+									</h4>
+									<p>Wonthon/Potato/Fries/Sauce</p>
+								</li>
+								<li>
+									<h4>Bacon-Wrapped Shrimp with Garlic
+										<span>$5.00</span>
+									</h4>
+									<p>Wonthon/Potato/Fries/Sauce</p>
+								</li>
+								<li>
+									<h4>Apple Smoked Chicken with White Sauce
+										<span>$5.00</span>
+									</h4>
+									<p>Wonthon/Potato/Fries/Sauce</p>
+								</li>
+								<li>
+									<h4>Imported Oysters Grill (5 Pieces)
+										<span>$5.00</span>
+									</h4>
+									<p>Wonthon/Potato/Fries/Sauce</p>
+								</li>
+								<li>
+									<h4>Apple Smoked Chicken with White Sauce
+										<span>$5.00</span>
+									</h4>
+									<p>Wonthon/Potato/Fries/Sauce</p>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-md-12 col-lg-10 col-xl-6 mt-4">
+						<h1 class=" pb-4" id="porcoes">Porções</h1>
+						<div class="menu_list pr-0">
+							<ul class="list">
+								<li>
+									<h4>Wonton with french fries
+										<span>$5.00</span>
+									</h4>
+									<p>Wonthon/Potato/Fries/Sauce</p>
+								</li>
+								<li>
+									<h4>Roasted Red Potatoes with Rosemary
+										<span>$5.00</span>
+									</h4>
+									<p>Wonthon/Potato/Fries/Sauce</p>
+								</li>
+								<li>
+									<h4>Bacon-Wrapped Shrimp with Garlic
+										<span>$5.00</span>
+									</h4>
+									<p>Wonthon/Potato/Fries/Sauce</p>
+								</li>
+								<li>
+									<h4>Apple Smoked Chicken with White Sauce
+										<span>$5.00</span>
+									</h4>
+									<p>Wonthon/Potato/Fries/Sauce</p>
+								</li>
+								<li>
+									<h4>Imported Oysters Grill (5 Pieces)
+										<span>$5.00</span>
+									</h4>
+									<p>Wonthon/Potato/Fries/Sauce</p>
+								</li>
+								<li>
+									<h4>Apple Smoked Chicken with White Sauce
+										<span>$5.00</span>
+									</h4>
+									<p>Wonthon/Potato/Fries/Sauce</p>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+
+
+			<button onclick="topFunction()" id="btn-top"> <i class="bi bi-arrow-up-circle"></i></button>
+
+			<div id="preloader"></div>
+		</section>
+
+		<!--================End Menu Area =================-->
+		<%- include('termos'); %>
+			<%- include('footer'); %>

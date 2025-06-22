@@ -119,7 +119,7 @@ io.on('connection', (socket) => {
   socket.on('disconnect', () => { console.log('user disconnected'); });
 });
 
-server.listen(80, () => {
+server.listen(8181, () => {
   console.log('server running at https://10.10.10.6:8181');
 });
 /*

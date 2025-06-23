@@ -26,7 +26,7 @@ app.use(bodyParser.json());
 app.use(cors(corsOptions));
 app.use(logger('dev'));
 app.set('view engine','ejs');
-app.set('views', './views');
+app.set('views', './app-vercel/views');
 
 
 app.get('/',(req,res)=>{

@@ -3,8 +3,9 @@ const express = require('express');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
 const app = express();
-
-
+app.use(logger('dev'));
+app.set('view engine','ejs');
+app.set('views', './views');
 const corsOptions = {
      origin: '*',
      method: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
@@ -24,9 +25,7 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 
 app.use(cors(corsOptions));
-app.use(logger('dev'));
-app.set('view engine','ejs');
-app.set('views', './app-vercel/views');
+
 
 
 app.get('/',(req,res)=>{

@@ -29,7 +29,7 @@ app.use(cors(corsOptions));
 
 
 app.get('/',(req,res)=>{
-    res.render({titulo:'Pagina inicial'});
+    res.send({titulo:'Pagina inicial'});
 });
 app.get('/api',(req,res)=>{
     res.json({titulo:'Pagina inicial',data:'0k'});

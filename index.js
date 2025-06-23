@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 var app = express();
 //app.use(logger('dev'));
 app.set('view engine','ejs');
-app.set('views', '/views');
+app.set('views', './views/');
 const corsOptions = {
      origin: '*',
      method: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
@@ -29,10 +29,6 @@ app.use(express.static(__dirname + '/public'));
 
 
 
-app.get('/route',(req,res)=>{
-   
-    res.render('index');
-});
 app.get('/api/json',(req,res)=>{
     let data ={ ok: 'ok'}
     res.json(data);

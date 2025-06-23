@@ -1,46 +1,42 @@
-var cors = require('cors');  
+var cors = require('cors');
 const express = require('express');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
 const { createServer } = require('node:http');
-const { join } = require('node:path');
+const { join, dirname } = require('node:path');
 const { Server } = require('socket.io');
 
 
 const app = express();
 const server = createServer(app);
 const io = new Server(server);
-
+app.use(logger('dev'));
 
 io.on('connection', (socket) => {
-  console.log('a user connected');
-  socket.on('disconnect', () => {
-    console.log('user disconnected');
-  });
-});
-app.get('/', (req, res) => {
-  res.sendFile(join(__dirname, 'index.html'));
+    console.log('a user connected');
+    socket.on('disconnect', () => {
+        console.log('user disconnected');
+    });
 });
 
-app.use(logger('dev'));
-//app.set('view engine','ejs');
-//app.set('views', './views/');
+
+
 const corsOptions = {
-     origin: '*',
-     method: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
-     exposedHeaders: [
-        
-          'Autorization',
-          'X-Requested-With',
-          'Content-Type',
-          'Cache-Control:no-cache',
-          'Access-Control-Allow-Origin:*'
-     ],
-     preflightContinue: true,
+    origin: '*',
+    method: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
+    exposedHeaders: [
+
+        'Autorization',
+        'X-Requested-With',
+        'Content-Type',
+        'Cache-Control:no-cache',
+        'Access-Control-Allow-Origin:*'
+    ],
+    preflightContinue: true,
 
 };
 
-app.use(bodyParser.urlencoded({extended:true}));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 app.use(cors(corsOptions));
@@ -48,18 +44,22 @@ app.use(express.static(__dirname + '/public'));
 
 
 
-app.get('/api/json',(req,res)=>{
-    let data ={ ok: 'ok'}
+app.get('/api/json', (req, res) => {
+    let data = { ok: 'ok' }
     res.json(data);
 });
 
 
-app.get('/api/teste',(req,res)=>{
+app.get('/api/teste', (req, res) => {
     res.send("OK");
 });
+app.get('/', (req, res) => {
 
-server.listen(8181, ()=>
-{
+    //res.sendFile(join(__dirname+req.path+'views', 'index.html'));
+
+    res.sendFile('index.html', { root: './views', maxAge: 3600000 })
+});
+server.listen(8181, () => {
     console.log("Server on 8181");
 })
 

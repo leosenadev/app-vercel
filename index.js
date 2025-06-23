@@ -3,7 +3,7 @@ const express = require('express');
 //const logger = require('morgan');
 const bodyParser = require('body-parser');
 var app = express();
-app.use(logger('dev'));
+//app.use(logger('dev'));
 //app.set('view engine','ejs');
 //app.set('views', './views');
 
@@ -28,11 +28,8 @@ app.use(cors(corsOptions));
 
 
 
-app.get('/',(req,res)=>{
-    res.send({titulo:'Pagina inicial'});
-});
-app.get('/api',(req,res)=>{
-    res.json({titulo:'Pagina inicial',data:'0k'});
+app.get('/api/teste',(req,res)=>{
+    res.send("OK");
 });
 
 app.listen(8181, ()=>

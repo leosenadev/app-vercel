@@ -1,8 +1,27 @@
 var cors = require('cors');  
 const express = require('express');
-//const logger = require('morgan');
+const logger = require('morgan');
 const bodyParser = require('body-parser');
-var app = express();
+const { createServer } = require('node:http');
+const { join } = require('node:path');
+const { Server } = require('socket.io');
+
+
+const app = express();
+const server = createServer(app);
+const io = new Server(server);
+
+
+io.on('connection', (socket) => {
+  console.log('a user connected');
+  socket.on('disconnect', () => {
+    console.log('user disconnected');
+  });
+});
+app.get('/', (req, res) => {
+  res.sendFile(join(__dirname, 'index.html'));
+});
+
 app.use(logger('dev'));
 //app.set('view engine','ejs');
 //app.set('views', './views/');
@@ -39,7 +58,7 @@ app.get('/api/teste',(req,res)=>{
     res.send("OK");
 });
 
-app.listen(8181, ()=>
+server.listen(8181, ()=>
 {
     console.log("Server on 8181");
 })

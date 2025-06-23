@@ -42,7 +42,12 @@ app.use(bodyParser.json());
 app.use(cors(corsOptions));
 app.use(express.static(__dirname + '/public'));
 
+app.get('/', (req, res) => {
 
+    res.sendFile(join(__dirname+req.path+'views', 'index.html'));
+
+   // res.sendFile('index.html', { root: './views', maxAge: 3600000 })
+});
 
 app.get('/api/json', (req, res) => {
     let data = { ok: 'ok' }

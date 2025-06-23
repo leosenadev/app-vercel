@@ -44,9 +44,7 @@ app.use(express.static(__dirname + '/public'));
 
 app.get('/', (req, res) => {
 
-    res.sendFile(join(__dirname+req.path+'views', 'index.html'));
-
-   // res.sendFile('index.html', { root: './views', maxAge: 3600000 })
+    res.sendFile('index.html', { root: './views' })
 });
 
 app.get('/api/json', (req, res) => {
@@ -58,12 +56,7 @@ app.get('/api/json', (req, res) => {
 app.get('/api/teste', (req, res) => {
     res.send("OK");
 });
-app.get('/', (req, res) => {
 
-    //res.sendFile(join(__dirname+req.path+'views', 'index.html'));
-
-    res.sendFile('index.html', { root: './views', maxAge: 3600000 })
-});
 server.listen(8181, () => {
     console.log("Server on 8181");
 })

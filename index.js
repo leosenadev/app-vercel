@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 var app = express();
 //app.use(logger('dev'));
 app.set('view engine','ejs');
-app.set('views', 'views');
+app.set('views', './views');
 const corsOptions = {
      origin: '*',
      method: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
@@ -29,7 +29,7 @@ app.use(cors(corsOptions));
 
 
 app.get('/',(req,res)=>{
-    res.render('index',{titulo:'Pagina inicial'});
+    res.render({titulo:'Pagina inicial'});
 });
 app.get('/api',(req,res)=>{
     res.json({titulo:'Pagina inicial',data:'0k'});

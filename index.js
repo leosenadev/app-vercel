@@ -44,7 +44,7 @@ app.use(express.static(__dirname + '/public'));
 
 app.get('/', (req, res) => {
 
-    res.sendFile('index.html', { root: './views' })
+    res.sendFile('index.html', { root: '/views' })
 });
 
 app.get('/api/json', (req, res) => {

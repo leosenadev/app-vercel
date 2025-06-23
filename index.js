@@ -44,7 +44,7 @@ app.use(express.static(__dirname + '/public'));
 
 app.get('/', (req, res) => {
 
-    res.render("<h1>API LSS.TECNOLOGIAS</h1>");
+    res.send("<h1>API LSS.TECNOLOGIAS</h1>");
 });
 
 app.get('/api/json', (req, res) => {

@@ -1,11 +1,39 @@
+var cors = require('cors');  
 const express = require('express');
-const  app = express();
+const logger = require('morgan');
+const bodyParser = require('body-parser');
+const app = express();
+
+app.set('view engine','ejs');
+app.set('views', './views');
+
+const corsOptions = {
+     origin: '*',
+     method: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
+     exposedHeaders: [
+        
+          'Autorization',
+          'X-Requested-With',
+          'Content-Type',
+          'Cache-Control:no-cache',
+          'Access-Control-Allow-Origin:*'
+     ],
+     preflightContinue: true,
+
+};
+
+app.set(bodyParser.urlencoded({extended:true}));
+
+app.use(cors(corsOptions));
+app.use(logger('dev'));
+
 
 app.get('/',(req,res)=>{
-    res.send('<h1>Ola mundo </h1>');
-})
+    res.render('index',{titulo:'Pagina inicial'});
+});
 
 app.listen(8181, ()=>
 {
     console.log("Server on 8181");
 })
+

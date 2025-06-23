@@ -25,7 +25,10 @@ const corsOptions = {
 
 };
 app.use(cors(corsOptions));
-
+app.get('/api/json',(req,res)=>{
+    let data ={ ok: 'ok'}
+    res.json(data);
+});
 
 
 app.get('/api/teste',(req,res)=>{

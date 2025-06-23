@@ -1,9 +1,9 @@
 var cors = require('cors');  
 const express = require('express');
-const logger = require('morgan');
+//const logger = require('morgan');
 const bodyParser = require('body-parser');
-const app = express();
-app.use(logger('dev'));
+var app = express();
+//app.use(logger('dev'));
 app.set('view engine','ejs');
 app.set('views', './views');
 const corsOptions = {

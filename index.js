@@ -45,6 +45,11 @@ app.use(express.static(__dirname + '/public'));
 app.set('View engine','ejs');
 app.set('View','./View');
 
+app.get('/teste', (req, res) => {
+    res.render("index");
+ 
+});
+
 app.get('/', (req, res) => {
     res.send("<h3>API - lsstecnologias</h3>");
  

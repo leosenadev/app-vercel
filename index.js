@@ -59,7 +59,7 @@ app.get('/api/:mesa', (req, res) => {
     
     try{
         let n_mesa = req.params.mesa;
-        console.log(n_mesa);
+        res.json({"data":n_mesa})
     }catch(err){
         console.error(err)
     }

@@ -43,8 +43,8 @@ app.use(cors(corsOptions));
 app.use(express.static(__dirname + '/public'));
 
 app.get('/', (req, res) => {
-
-    res.send("<h1>API LSS.TECNOLOGIAS</h1>");
+    res.sendFile("index.html",{root:dirname('./')})
+ 
 });
 
 app.get('/api/json', (req, res) => {

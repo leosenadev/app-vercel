@@ -43,7 +43,7 @@ app.use(cors(corsOptions));
 app.use(express.static(__dirname + '/public'));
 
 app.get('/', (req, res) => {
-    res.sendFile("index.html",{root:dirname('./')})
+    res.sendFile("index.html",{root:dirname('./app-vercel')})
  
 });
 

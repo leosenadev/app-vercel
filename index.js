@@ -42,8 +42,11 @@ app.use(bodyParser.json());
 app.use(cors(corsOptions));
 app.use(express.static(__dirname + '/public'));
 
+app.set('View engine','ejs');
+app.set('View','./View')
+
 app.get('/', (req, res) => {
-    res.render("<h3>API - lsstecnologias</h3>");
+    res.send("<h3>API - lsstecnologias</h3>");
  
 });
 

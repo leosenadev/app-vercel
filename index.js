@@ -43,7 +43,7 @@ app.use(cors(corsOptions));
 app.use(express.static(__dirname + '/public'));
 
 app.set('View engine','ejs');
-app.set('View','./View')
+app.set('View','./View');
 
 app.get('/', (req, res) => {
     res.send("<h3>API - lsstecnologias</h3>");

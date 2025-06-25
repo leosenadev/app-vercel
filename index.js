@@ -1,16 +1,24 @@
 var cors = require('cors');
 const express = require('express');
 const logger = require('morgan');
+require('dotenv').config();
 const bodyParser = require('body-parser');
 const { createServer } = require('node:http');
 const { join, dirname } = require('node:path');
 const { Server } = require('socket.io');
 
+const {MongoClient} = require("mongodb");
+
+const uri = "mongodb+srv://lsstecnologias:"+process.env.PASSWORD_MONGO+"@laencartes.s7ttpj2.mongodb.net/?retryWrites=true&w=majority&appName=laencartes";
+const mongoDB = new MongoClient(uri);
+const nameDB="laencartes";
+
 
 const app = express();
 const server = createServer(app);
 const io = new Server(server,{ cors: {
-    origin: "*"
+    origin: "*",
+    credentials: true
   }});
 app.use(logger('dev'));
 
@@ -44,11 +52,22 @@ app.use(bodyParser.json());
 app.use(cors(corsOptions));
 app.use(express.static(__dirname + '/public'));
 
-app.set('View engine','ejs');
-app.set('View','./View');
 
-app.get('/teste', (req, res) => {
-    res.render("index");
+
+app.get('/api/get', async(req, res) => {
+    try{
+        const db_open = mongoDB.db(nameDB);
+        const data_collection = db_open.collection('clientes');
+        var data = await data_collection.find().toArray();
+        if(data){
+         res.status(200).json(data);
+          // mongoDB.close();
+        }
+    }catch(err){
+        console.error(err);
+    }finally{
+        await mongoDB.close();
+    }
  
 });
 

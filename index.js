@@ -57,7 +57,7 @@ app.get('/', (req, res) => {
  
 });
 
-app.get('/api/:mesa', (req, res) => {
+app.get('/api/mesa/:mesa', (req, res) => {
     
     try{
         let n_mesa = req.params.mesa;

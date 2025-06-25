@@ -9,7 +9,9 @@ const { Server } = require('socket.io');
 
 const {MongoClient} = require("mongodb");
 
-const uri = "mongodb+srv://lsstecnologias:"+process.env.PASSWORD_MONGO+"@laencartes.s7ttpj2.mongodb.net/?retryWrites=true&w=majority&appName=laencartes";
+//const uri = "mongodb+srv://lsstecnologias:"+process.env.PASSWORD_MONGO+"@laencartes.s7ttpj2.mongodb.net/?retryWrites=true&w=majority&appName=laencartes";
+
+const uri = "mongodb+srv://lsstecnologias:"+process.env.PASSWORD_MONGO+"@laencartes.s7ttpj2.mongodb.net/";
 const mongoDB = new MongoClient(uri);
 const nameDB="laencartes";
 

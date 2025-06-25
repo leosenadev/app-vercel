@@ -61,7 +61,10 @@ app.get('/api/mesa/:mesa', (req, res) => {
     
     try{
         let n_mesa = req.params.mesa;
-        res.json({"data":n_mesa})
+        let data_qrcode ={
+            "mesa_n":n_mesa
+        }
+        res.status(200).json(data_qrcode);
     }catch(err){
         console.error(err)
     }

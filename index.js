@@ -66,6 +66,7 @@ app.get('/api/mesa/:mesa', (req, res) => {
             "client_n":id_client
         }
         res.status(200).json(data_qrcode);
+        window.location.href=`http://localhost:3000/`;
     } catch (err) {
         console.error(err)
     }
